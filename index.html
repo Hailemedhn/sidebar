@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slide Sidebar</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      ul {
+        list-style: none;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2em;
+        cursor: pointer;
+      }
+      li {
+        margin: 20px;
+      }
+      .sidebarContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 200px;
+        height: 400px;
+        position: absolute;
+        left: -250px;
+        top: 200px;
+        background-color: rgb(167, 161, 161);
+        position: relative;
+        transition: all 1s ease;
+      }
+      .burgerContainer {
+        position: absolute;
+        right: 20px;
+        width: 35px;
+      }
+      .burger {
+        width: 35px;
+        height: 5px;
+        background-color: black;
+        margin: 6px 0;
+      }
+      .container {
+        position: relative;
+        left: 0px;
+        top: 200px;
+        width: 300px;
+      }
+      .close {
+        position: absolute;
+        right: 32px;
+        top: 32px;
+        width: 32px;
+        height: 32px;
+        opacity: 0.3;
+      }
+      .close:hover {
+        opacity: 1;
+      }
+      .close:before,
+      .close:after {
+        position: absolute;
+        left: 15px;
+        content: " ";
+        height: 33px;
+        width: 2px;
+        background-color: rgb(185, 24, 24);
+      }
+      .close:before {
+        transform: rotate(45deg);
+      }
+      .close:after {
+        transform: rotate(-45deg);
+      }
+      .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 25px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
+      }
+      /* Facebook */
+      .fa-facebook {
+        background: #3b5998;
+        color: white;
+      }
+
+      /* Twitter */
+      .fa-twitter {
+        background: #55acee;
+        color: white;
+      }
+      .social {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="burgerContainer">
+      <div class="burger"></div>
+      <div class="burger"></div>
+      <div class="burger"></div>
+      <div class="container"></div>
+    </div>
+    <div class="sidebarContainer">
+      <a href="#" class="close"></a>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+        <li>Address</li>
+      </ul>
+      <div class="social">
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+      </div>
+    </div>
+    <script>
+      const burger = document.querySelector(".burgerContainer");
+      const sidebar = document.querySelector(".sidebarContainer");
+      burger.addEventListener("click", () => {
+        sidebar.style.left = "20px";
+      });
+      const cross = document.querySelector(".close");
+      cross.addEventListener("click", () => {
+        sidebar.style.left = "-250px";
+      });
+    </script>
+  </body>
+</html>
